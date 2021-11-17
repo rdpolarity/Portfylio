@@ -1,0 +1,64 @@
+@import "Global";
+$border-radius: 2px;
+
+.buttonColored {
+  @extend .button;
+
+  display: flex;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
+
+  color: black;
+  background: white;
+  background-clip: padding-box; /* !importanté */
+
+  &:hover {
+    border: $border-radius transparent solid;
+    box-shadow: 0px 0px 36px 3px rgba(16, 169, 255, 0.49);
+    &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -$border-radius; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background: linear-gradient(
+    -45deg,
+    #7F30CB,
+    #01DCBA
+    );
+  }
+  }
+
+}
+
+.buttonHoverBlack {
+  &:hover {
+    background-color: black;
+    //color: white;
+    filter: invert(50%);
+    & > img {
+    }
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.03);
+  border: $border-radius $button-outline solid;
+  border-radius: 10px;
+  padding: 15px 50px 15px 50px;
+  font-weight: bold;
+  font-size: 24px;
+  transition: all 0.3s 0s ease;
+
+  & > p {
+    margin: 0px;
+    font-family: 'Sora', sans-serif;
+  }
+}

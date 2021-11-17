@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import './index.css';
 import Home from './pages/Home';
 
 ReactDOM.render(
-  <React.StrictMode>
-      <h1>Test</h1>
-    <Home />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <div>
+        <h1>IndeZ</h1>
+        <Home/>
+    </div>,
+document.getElementById('root')
+)
